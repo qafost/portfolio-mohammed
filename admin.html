@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Supabase Test</title>
+</head>
+<body>
+
+  <h2>إضافة رسالة</h2>
+
+  <form id="messageForm">
+    <input type="text" id="name" placeholder="اسمك" required>
+    <br><br>
+    <textarea id="message" placeholder="اكتب رسالتك" required></textarea>
+    <br><br>
+    <button type="submit">إرسال</button>
+  </form>
+
+  <hr>
+
+  <h2>الرسائل</h2>
+  <div id="messagesList"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    const supabaseUrl = "YOUR_SUPABASE_URL";
+    const supabaseKey = "YOUR_PUBLIC_ANON_KEY";
+
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+    const form = document.getElementById("messageForm");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      const { error } = await supabase
+        .from("messages")
+        .insert([{ name, message }]);
+
+      if (error) {
+        alert("حصل خطأ");
+        console.log(error);
+      } else {
+        alert("تم الحفظ بنجاح");
+        form.reset();
+        loadMessages();
+      }
+    });
+
+    async function loadMessages() {
+      const { data, error } = await supabase
+        .from("messages")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        console.log(error);
+        return;
+      }
+
+      const container = document.getElementById("messagesList");
+      container.innerHTML = "";
+
+      data.forEach(item => {
+        container.innerHTML += `
+          <div style="border:1px solid #ccc; padding:10px; margin:10px 0;">
+            <strong>${item.name}</strong>
+            <p>${item.message}</p>
+          </div>
+        `;
+      });
+    }
+
+    loadMessages();
+  </script>
+
+</body>
+</html>

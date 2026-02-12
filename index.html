@@ -148,7 +148,7 @@
       transition: all .3s ease;
       z-index: 5;
       background: var(--bg-dark-blue);
-     box-shadow: 0 0 15px #000000C2
+     box-shadow: 0 0 2px #000000C2
     }
     
     .container.top {
@@ -249,7 +249,7 @@
     nav {
       z-index: 2;
       position: fixed;
-      right: -500px;
+      right: -5000px;
       top: 0;
       background: #17264B;
       bottom: 0;
@@ -262,7 +262,7 @@
     }
     
     nav.close {
-      right: -500px;
+      right: -5000px;
     }
     
     ul {
@@ -496,6 +496,39 @@
     
     
     
+    .projection{
+      width: 100%;
+    }
+    .pro-1{
+      background: #2D2F41A3;
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 35px 0;
+    }
+    .pro-1 img{
+      width: 100%;
+    }
+    .gront{
+      padding: 10px 12px ;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .gront p{
+      color: #B6B6B6;
+    }
+    .btn-project{
+      display: flex;
+      gap: 10px;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+    }
+    .btn-project a{
+      padding: 8px 18px;
+      border-radius: 100px;
+      background: #162CEC45;
+      color: #001AFF;
+    }
     
     /* ======= footer ======= */
     footer {
@@ -531,11 +564,11 @@
       </div>
       <nav>
         <ul>
-          <li><a href="">about</a></li>
-          <li><a href="">company</a></li>
-          <li><a href="">projects</a></li>
-          <li><a href="">experience</a></li>
-          <li><a href="">contact</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#company">company</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#experience">experience</a></li>
+          <li><a href="#contact">contact</a></li>
         </ul>
       </nav>
       <div class="menu">
@@ -564,6 +597,7 @@
           <p>My name is Mohamed Khaled, a high school student and web developer with a strong interest in building modern, clean, and user-focused web experiences. I started learning programming out of curiosity, and over time it became a serious passion and a long-term goal.</p>
           <p>I mainly focus on frontend web development, paying close attention to code structure, scalability, and user experience. I enjoy turning ideas into real, functional interfaces and continuously improving my skills through hands-on projects and experimentation.</p>
           <p>My goal is to build impactful digital products and work on real-world SaaS projects that solve practical problems, both locally and globally. I believe in continuous learning, disciplined growth, and building things the right way—not just making them work.</p>
+          <div class="e">
           <div class="skills" class="reveal">
             <div class="skill">
               <span class="reveal">→ HTML5</span>
@@ -577,11 +611,11 @@
               <span class="reveal">→ TypeScript</span>
             </div>
           </div>
-        </div>
         <div class="about_img" class="reveal">
           <div>
             <img src="public/img/profile.jpg" alt="Profile picture" class="reveal">
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -598,6 +632,40 @@
     <section id="projects">
       <div class="title">
         <h2><span>03.</span>projects</h2>
+      </div>
+      <div class="projection">
+   <div class="pro-1">
+        <img src="public/img/eslam.png" alt="images project">
+        <div class="gront">
+          <h3>eslam okasha store</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque consequatur debitis labore, saepe reiciendis expedita.</p>
+        </div>
+        <div class="btn-project">
+          <a href="https://eslam-okasha.vercel.app">view</a>
+          <a href="https://github.com/qavento-LTD/Project-EO">github</a>
+        </div>
+      </div>	
+      <div class="pro-1">
+        <img src="public/img/website.png" alt="images project">
+        <div class="gront">
+          <h3>jolt E-commerce store</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque consequatur debitis labore, saepe reiciendis expedita.</p>
+        </div>
+        <div class="btn-project">
+          <a href="https://qavento-ltd.github.io/E-commerce-Jolt/">view</a>
+          <a href="https://github.com/qavento-LTD/E-commerce-Jolt">github</a>
+        </div>
+      </div>	<div class="pro-1">
+        <img src="public/img/ibn-ayoub.png" alt="images project">
+        <div class="gront">
+          <h3>ibn ayoub store</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque consequatur debitis labore, saepe reiciendis expedita.</p>
+        </div>
+        <div class="btn-project">
+          <a href="https://ibn-ayounb.page.dev/">view</a>
+          <a href="https://github.com/qavento-LTD/Ibn-Ayoub-E-commerce">github</a>
+        </div>
+      </div>	
       </div>
     </section>
     <!-- section contect -->
