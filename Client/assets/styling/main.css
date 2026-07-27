@@ -1,0 +1,71 @@
+:root{
+  /* CSS HEX Variables */
+--ocean-twilight: #3841a1ff;
+--deep-navy: #14194dff;
+--prussian-blue: #090c30ff;
+--space-indigo: #1b1e38ff;
+--ocean-twilight-2: #3945bfff;
+--white-darker: #EDEDED;
+}
+@font-face {
+  font-family: 'Arsles';
+  src: url('../fonts/Arslen.ttf') format(truetype);
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arsles';
+  text-decoration: none;
+}
+
+*::selection{
+  color: white;
+  background: black;
+}
+h1, h2, h3, h4, h5, h6, span{
+  color: var(--white-darker);
+}
+a{
+  color: white;
+}
+body{
+  background-image: linear-gradient(var(--deep-navy), var(--ocean-twilight-2));
+  height: 100vh;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px;
+  padding: 12px 8px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.048);
+  backdrop-filter: blur(5px);
+  box-shadow:inset 0px .5px 0px white, inset 0px -.5px 0px white;
+}
+
+
+
+/* Navbar Styling */
+
+#link ul{
+  display: flex;
+  gap: 12px;
+  list-style: none;
+}
+
+#link ul li a{
+  padding: 4px 8px;
+  transition: .5s all ease-out;
+  
+  border-radius: 50px;
+}
+
+#link ul li a:hover{
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.425);
+
+}
