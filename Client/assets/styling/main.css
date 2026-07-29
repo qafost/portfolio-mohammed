@@ -53,7 +53,7 @@ header{
 
 #link ul{
   display: flex;
-  gap: 12px;
+  gap: 12px; 
   list-style: none;
 }
 
