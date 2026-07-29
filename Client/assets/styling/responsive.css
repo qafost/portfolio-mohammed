@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+    #menu{
+        display: none;
+    }
+    nav{
+        position: static;
+        background: transparent !important;
+        border: none;
+    }
+    nav ul {
+        flex-direction: row;
+    }
+}

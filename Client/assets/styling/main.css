@@ -1,71 +1,154 @@
-:root{
-  /* CSS HEX Variables */
---ocean-twilight: #3841a1ff;
---deep-navy: #14194dff;
---prussian-blue: #090c30ff;
---space-indigo: #1b1e38ff;
---ocean-twilight-2: #3945bfff;
---white-darker: #EDEDED;
-}
 @font-face {
-  font-family: 'Arsles';
-  src: url('../fonts/Arslen.ttf') format(truetype);
+  font-family: 'Arslen';
+  src: url('../fonts/Arslen.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
+:root{
+  --onyx: #131515ff;
+  --graphite: #2b2c28ff;
+  --verdigris-blur: #33998996;
+  --verdigris: #339989ff;
+  --pearl-aqua: #7de2d1ff;
+  --snow: #fffafbff;
+  
+  --font-Arslen: 'Arslen';
+  --font-size: 24px;
+  --font-weight-6: 600;
+  
+  --size-4: 4px; 
+  --size-s: 8px;
+  --size-m: 14px;
+  --size-l: 18px;
+  --size-xl: 24px;
+  --size-2xl: 36px;
+  
+  --border-rounded: 510px;
+  --border: 1px solid var(--pearl-aqua);
+  
+  --blur: 5px;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Arsles';
-  text-decoration: none;
+  font-family: var(--font-Arslen);
 }
-
 *::selection{
-  color: white;
-  background: black;
+  color: var(--pearl-aqua);
+  background: var(--verdigris);
 }
-h1, h2, h3, h4, h5, h6, span{
-  color: var(--white-darker);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+button{
+  color: var(--snow);
+  text-decoration: none;
+  text-transform: capitalize;
 }
-a{
-  color: white;
+button{
+  background-color: var(--verdigris);
+  padding: var(--size-s) var(--size-l);
+  border-radius: var(--border-rounded);
+  border: var(--border);
 }
 body{
-  background-image: linear-gradient(var(--deep-navy), var(--ocean-twilight-2));
-  height: 100vh;
-}
-header{
-  display: flex;
-  justify-content: space-between;
-  margin: 12px;
-  padding: 12px 8px;
-  border-radius: 50px;
-  background: rgba(255, 255, 255, 0.048);
-  backdrop-filter: blur(5px);
-  box-shadow:inset 0px .5px 0px white, inset 0px -.5px 0px white;
+  background-image: linear-gradient(to top right, var(--onyx), var(--verdigris));
+  height: 10000vh;
 }
 
 
 
-/* Navbar Styling */
 
-#link ul{
+
+/* ===== class variable ===== */
+.flex{
   display: flex;
   gap: 12px; 
+  justify-content: space-between;
+  align-items: center;
+}
+header{
+  background: var(--verdigris-blur);
+  margin: var(--size-m);
+  padding: var(--size-m);
+  border-radius: var(--border-rounded);
+  border: var(--border);
+  right: 0;
+  left: 0;
+  backdrop-filter: blur(var(--blur));
+  position: fixed;
+}
+#menu{
+  background: var(--pearl-aqua);
+  width: var(--size-2xl);
+  height: var(--size-2xl);
+  border-radius: var(--border-rounded);
+  gap: var(--size-s);
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  span{
+    width: var(--size-xl);
+    height: 2px;
+    background: var(--verdigris);
+    display: block;
+  }
+  span:nth-child(2){
+    width: var(--size-l);
+  }
+}
+nav{
+  top: 120%;
+  right: 0;
+  left: 0;
+  background: var(--verdigris-blur);
+  border-radius: var(--size-xl);
+  border: var(--border);
+  padding: var(--size-m);
+  position: fixed;
+  transition: .5s;
+}
+ul{
   list-style: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+nav ul li{
+  width: 100%;
+  background: var(--pearl-aqua);
+  padding: var(--size-s ) var(--size-xl);
+  border-radius: var(--size-2xl);
+  text-align: center;
+}
+nav ul li a{
+  color: var(--onyx);
+} 
+article{
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center!important;
+  gap: 20px
+}
+article img{
+  max-width: 70%;
+  border-radius: var(--border-rounded);
+  border: var(--border);
 }
 
-#link ul li a{
-  padding: 4px 8px;
-  transition: .5s all ease-out;
-  
-  border-radius: 50px;
-}
 
-#link ul li a:hover{
-  backdrop-filter: blur(5px);
-  background: rgba(255, 255, 255, 0.425);
 
+.articles span{
+  background: var(--pearl-aqua);
+  padding: var(--size-4) var(--size-l);
+  border-radius: var(--border-rounded);
 }
