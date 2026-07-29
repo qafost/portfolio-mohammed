@@ -1,6 +1,6 @@
 const navbar = document.getElementById("link");
 
-
+const menu = document.getElementById("menu")
 
 function handlNavbar() {
 
@@ -14,7 +14,8 @@ function handlNavbar() {
         {name: "contect" , url: "contect.html"}
     ]
 
-
+    ulElement.classList = 'flex';
+    
     infoLink.forEach((info) => {
         const liElement = document.createElement("li");
         const Links = document.createElement("a");
@@ -29,4 +30,17 @@ function handlNavbar() {
     navbar.appendChild(ulElement)
 }
 
-handlNavbar()
+
+function handlMenu() {
+    menu.addEventListener('click', () => {
+        if (navbar.classList == 'flex close') {
+            navbar.classList = 'flex open';
+        }else{
+            navbar.classList = 'flex close';
+        }
+        }
+    )
+}
+
+handlMenu();
+handlNavbar();
