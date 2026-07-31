@@ -1,13 +1,107 @@
+/* ==========================================
+   Responsive Stylesheet (responsive.css)
+========================================== */
+
+/* 1. الشاشات الصغيرة والموبايل (أقل من 768px) */
+@media (max-width: 767px) {
+    /* تفعيل القائمة لما تضيف كلاس active بالـ JS */
+    nav.active {
+        top: 75px;
+        right: var(--size-m);
+        left: var(--size-m);
+    }
+
+    #hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact form {
+        padding: 20px 15px;
+    }
+}
+
+
+/* 2. الشاشات المتوسطة والتابلت (من 768px إلى 1023px) */
 @media (min-width: 768px) {
-    #menu{
+    #menu {
         display: none;
     }
-    nav{
+
+    nav {
         position: static;
         background: transparent !important;
         border: none;
+        backdrop-filter: none;
+        padding: 0;
     }
+
     nav ul {
         flex-direction: row;
+        gap: 25px;
+    }
+
+    nav ul li {
+        width: auto;
+        padding: 0;
+    }
+
+    header {
+        max-width: 1100px;
+        margin: 15px auto;
+        right: 15px;
+        left: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* 3. الشاشات الكبيرة والـ Desktop (من 1024px وأكبر) */
+@media (min-width: 1024px) {
+    #hero .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .section-container {
+        padding: 80px 20px;
+    }
+    .hero-container {
+        flex-direction: row-reverse;
+        text-align: left;
+    }
+    .hero-content {
+        align-items: flex-start;
     }
 }
