@@ -1,17 +1,26 @@
 const navbar = document.getElementById("navbar");
 
-const menu = document.getElementById("menu")
+const menu = document.getElementById("menu");
+
+const  divsnav = document.getElementById("Navdiv");
+
+const btnLang = document.createElement('button');
+
+divsnav.append(btnLang)
+btnLang.id = "lang-btn";
+btnLang.innerHTML = "العربية"
+
 
 function handlNavbar() {
 
     const ulElement = document.createElement('ul');
-
+    
 
     const infoLink = [
-        {name: "home", url: "index.html"},
-        {name: "about", url: "about.html"}, 
-        {name: "project", url: "project.html"}, 
-        {name: "contect" , url: "contact.html"}
+        {name: "home", url: "index.html", lang: "homeNav"},
+        {name: "about", url: "about.html", lang: "aboutNav"}, 
+        {name: "project", url: "project.html", lang: "projectNav"}, 
+        {name: "contact" , url: "contact.html", lang: "contactNav"}
     ]
 
     ulElement.classList = 'flex';
@@ -20,27 +29,32 @@ function handlNavbar() {
         const liElement = document.createElement("li");
         const links = document.createElement("a");
 
+
         links.href = info.url;
         links.innerText = info.name;
+        links.setAttribute("data-lang", info.lang)
 
         ulElement.appendChild(liElement);
         liElement.appendChild(links)
             if (index == 0 && location.pathname.endsWith("index.html")) {
-                liElement.style.background = 'var(--pearl-aqua)'
+                liElement.style.background = 'var(--pearl-aqua)';
+                links.style.color = 'var(--noyx)'
             }if (index == 1 && location.pathname.endsWith("about.html")) {
                 liElement.style.background = 'var(--pearl-aqua)'
+                links.style.color = 'var(--noyx)'
             }
             if (index == 2 && location.pathname.endsWith("project.html")) {
                 liElement.style.background = 'var(--pearl-aqua)'
+                links.style.color = 'var(--noyx)'
             }
             if (index == 3 && location.pathname.endsWith("contact.html")) {
                 liElement.style.background = 'var(--pearl-aqua)'
+                links.style.color = 'var(--noyx)'
             }
     })
 
     navbar.appendChild(ulElement);
 }
-
 
 function handlMenu() {
     menu.addEventListener('click', () => {
@@ -65,9 +79,14 @@ const translations = {
         heroSubtitle: "Frontend Developer & UI/UX Designer",
         heroDesc: "I build clean, modern, and responsive web interfaces focused on performance and user experience.",
         viewWork: "View My Work",
-        contact: "Contact Me",
+        contact: "download CV",
         sectionAbout: 'About Me',
-        aboutPargraph: 'I am a passionate frontend developer dedicated to crafting functional and visually appealing websites. I focus on writing structured, clean HTML/CSS and interactive JavaScript code'
+        aboutPargraph: 'I am a passionate frontend developer dedicated to crafting functional and visually appealing websites. I focus on writing structured, clean HTML/CSS and interactive JavaScript code',
+        logo: '<span>Qavneto</span>',
+        homeNav: 'home',
+        aboutNav: 'about',
+        projectNav: 'project',
+        contactNav: 'contact'
     },
 
     ar: {
@@ -75,15 +94,19 @@ const translations = {
         heroSubtitle: "مطور واجهات أمامية ومصمم UI/UX",
         heroDesc: "أقوم بتطوير مواقع حديثة وسريعة ومتجاوبة مع جميع الأجهزة مع التركيز على تجربة المستخدم.",
         viewWork: "أعمالي",
-        contact: "تواصل معي",
+        contact: "السيرة الذاتيه",
         sectionAbout: 'عني',
-        aboutPargraph: 'أنا مطور Frontend شغوف بإنشاء مواقع ويب عملية وتصميمها بصرياً بشكل مميز. أهتم بكتابة كود HTML/CSS منظم ونظيف، وتطوير تفاعلات باستخدام JavaScript.'
+        aboutPargraph: 'أنا مطور Frontend شغوف بإنشاء مواقع ويب عملية وتصميمها بصرياً بشكل مميز. أهتم بكتابة كود HTML/CSS منظم ونظيف، وتطوير تفاعلات باستخدام JavaScript.',
+        logo: '<span>كافينتو</span>',
+        homeNav: 'القائمه الرئيسيه',
+        aboutNav: 'عني',
+        projectNav: 'مشاريع',
+        contactNav: 'التواصل'
     }
 };
 
 const langBtn = document.getElementById("lang-btn");
 
-let currentLang = "en";
 
 function changeLanguage(lang) {
 
@@ -99,19 +122,52 @@ function changeLanguage(lang) {
         }
 
     });
-
-    currentLang = lang;
+    localStorage.setItem("lang", lang);
 
     langBtn.textContent = lang === "en" ? "العربية" : "English";
 }
+
+
 langBtn.addEventListener("click", () => {
 
-    if (currentLang === "en") {
-        changeLanguage("ar");
+    if ( "en" === localStorage.getItem("lang")) {
+        localStorage.setItem("lang", "ar");
+        changeLanguage(localStorage.getItem("lang"));
     } else {
-        changeLanguage("en");
+        localStorage.setItem("lang", "en");
+        changeLanguage(localStorage.getItem("lang"));
     }
 
 });
 
-changeLanguage("en");
+changeLanguage(localStorage.getItem("lang"))
+
+
+
+
+// ======= project api ==========
+// const data = [{
+//     url: "https://user",
+//     alt: ""
+// },{}]
+
+
+// const project = `
+// <article class="project-card">
+//           <div class="project-img-wrapper">
+//             <!-- صورة المشروع 1 -->
+//             <img src="${url}" alt="E-Commerce Project Preview">
+//           </div>
+//           <div class="project-info">
+//             <h3>E-Commerce Interface</h3>
+//             <p>Modern online store layout with responsive navigation and dynamic cart design.</p>
+//             <div class="project-tags">
+//               <span>HTML</span>
+//               <span>CSS</span>
+//               <span>JS</span>
+//             </div>
+//             <a href="#" class="project-link">View Project &rarr;</a>
+//           </div>
+//         </article>`
+
+

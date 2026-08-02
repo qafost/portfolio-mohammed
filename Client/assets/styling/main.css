@@ -53,8 +53,8 @@
 }
 
 *::selection {
-    color: var(--pearl-aqua);
-    background: var(--verdigris);
+    color: var(--onyx);
+    background: var(--pearl-aqua)
 }
 
 
@@ -180,10 +180,19 @@ nav ul li {
     text-align: center;
 
     border-radius: var(--size-2xl);
+    transition: .1s all ease;
+}
+nav ul li:hover{
+    background: var(--pearl-aqua);
+    
 }
 
 nav ul li a {
     color: var(--snow);
+}
+
+nav ul li a:hover{
+    color: var(--noyx);
 }
 
 
@@ -313,7 +322,16 @@ input::placeholder {
 #contact button:active {  
     transform: scale(.98);  
 }
-
+#contact-index{
+    width: 100%;
+    height: 30vh;
+    justify-content: center;
+    align-items: center;
+}
+#contact-index button{
+    width: 60%;
+    padding: var(--size-l)
+}
 
 /* ==========================
    Footer
@@ -505,7 +523,9 @@ main {
     gap: 12px;
     transition: 0.3s;
 }
-
+.projects-grid:empty{
+  content: 'not found project';
+}
 .project-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -558,8 +578,8 @@ main {
 }
 
 .hero-image {
-    width: 160px;
-    height: 160px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: var(--border);
     overflow: hidden;
@@ -578,7 +598,7 @@ main {
 
 .project-img-wrapper {
     width: 100%;
-    height: 180px;
+    height: 200px;
     border-radius: var(--size-m);
     overflow: hidden;
     border: 1px solid rgba(125, 226, 209, 0.2);

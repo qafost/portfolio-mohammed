@@ -12,11 +12,10 @@
 
   <!-- Header -->
   <header id="home-header" class="flex">
-    <div id="logo">
+    <div id="logo" data-lang="logo">
       <span>Qavento</span>
     </div>
-    <div class="flex">
-    <button id="lang-btn">العربية</button>
+    <div class="flex" id="Navdiv">
     <menu id="menu" class="flex">
       <span></span>
       <span></span>
@@ -53,7 +52,7 @@
 </a>
 
 <a href="#contact" class="btn secondary-btn" data-lang="contact">
-  Contact Me
+  download CV
 </a>
           </div>
         </div>
@@ -92,7 +91,7 @@
         <article class="project-card">
           <div class="project-img-wrapper">
             <!-- صورة المشروع 1 -->
-            <img src="assets/images/project1.jpg" alt="E-Commerce Project Preview">
+            <img src="https://res.cloudinary.com/deuirrt5e/image/upload/v1785515158/20260731_192332_ajs5f4.jpg" alt="E-Commerce Project Preview">
           </div>
           <div class="project-info">
             <h3>E-Commerce Interface</h3>
@@ -109,7 +108,7 @@
         <article class="project-card">
           <div class="project-img-wrapper">
             <!-- صورة المشروع 2 -->
-            <img src="assets/images/project2.jpg" alt="Dashboard Panel Preview">
+            <img src="https://res.cloudinary.com/deuirrt5e/image/upload/v1785515161/20260731_192309_p1rtt5.jpg" alt="Dashboard Panel Preview">
           </div>
           <div class="project-info">
             <h3>Dashboard Panel</h3>
@@ -125,7 +124,7 @@
         <article class="project-card">
           <div class="project-img-wrapper">
             <!-- صورة المشروع 3 -->
-            <img src="assets/images/project3.jpg" alt="Landing Page Preview">
+            <img src="https://res.cloudinary.com/deuirrt5e/image/upload/v1785515153/20260731_192250_dq8ddp.jpg" alt="Landing Page Preview">
           </div>
           <div class="project-info">
             <h3>Landing Page</h3>
@@ -142,25 +141,9 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-      <!-- نموذج التواصل مجهز للربط بالـ Server -->
-      <form id="contact-form">
-        <h2>Get In Touch</h2>
-        
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-
-        <button type="submit" id="submit-btn">Send Message</button>
-        <p id="form-status" style="margin-top: 10px; text-align: center; font-size: 14px;"></p>
-      </form>
+    <section id="contact-index" class="flex">
+      <button href="contact.html">contact</button>
     </section>
-
   </main>
 
   <!-- Footer -->

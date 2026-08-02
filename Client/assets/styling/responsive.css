@@ -103,4 +103,8 @@
     .hero-content {
         align-items: flex-start;
     }
+    .hero-image {
+        width: 400px;
+        height: 400px;
+    }
 }
