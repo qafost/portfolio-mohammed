@@ -620,3 +620,18 @@ main {
     flex-direction: column;
     gap: 10px;
 }
+
+
+.box {
+    transition: all .7s ease;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
