@@ -1,13 +1,8 @@
 const navbar = document.getElementById("navbar");
-
 const menu = document.getElementById("menu");
-
 const  divsnav = document.getElementById("Navdiv");
-
 const btnLang = document.createElement('button');
-
 const btnPage = document.getElementById("btn_page");
-
 const projects = document.getElementById("projectsGrid");
 
 divsnav.append(btnLang)
@@ -172,27 +167,28 @@ elements.forEach(element => {
 
 async function getData(){
     const response = await fetch("/Client/assets/project.json")
-     const data = await response.json();
-     return data;
+    const data = await response.json();
+    return data;
 }
 
 
-// const project = `
-//         <article class="project-card">
-//           <div class="">
-//             <!-- صورة المشروع 1 -->
-//             <img src="" alt="E-Commerce Project Preview">
-//           </div>
-//           <div class="project-info">
-//             <h3>E-Commerce Interface</h3>
-//             <p>Modern online store layout with responsive navigation and dynamic cart design.</p>
-//             <div class="project-tags">
-//               <span>HTML</span>
-//               <span>CSS</span>
-//               <span>JS</span>
-//             </div>
-//             <a href="#" class="project-link">View Project &rarr;</a>
-//           </div>
-//         </article>`
 
-// projects.appendChild(project)
+
+function componentHeader(){
+
+    let headerID = document.getElementById("home-header");
+
+    let header = `
+    <div id="logo" data-lang="logo">
+        <span>Qavento</span>
+    </div>
+    <div class="flex" id="Navdiv">
+    <menu id="menu" class="flex">
+    <span></span>
+    <span></span>
+    </menu>
+    <nav id="navbar">
+    </nav>
+    </div>
+    `
+}
