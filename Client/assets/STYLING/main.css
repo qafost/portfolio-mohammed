@@ -422,3 +422,4 @@ h1, h2, h3, p { margin-top: 0; }
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { transform: none; opacity: 1; }
 }
+main { position: relative; overflow-x: clip; }
